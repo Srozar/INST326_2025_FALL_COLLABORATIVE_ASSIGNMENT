@@ -16,31 +16,29 @@ def card_validation(hand, played_card, current_suit):
     """
     valid_cards= []
     for card in hand:
-        #rule 1: Makes sure the suit matches
-        if card.suit == current_suit:
-            valid_cards.append(card)
-            
-        #rule 2: The ranks of the cards match 
-        elif card.ranktype == played_card.ranktype:
+        #rule 4: Crazy 8/wildcard
+        if card.ranktype == "8":
             valid_cards.append(card)
         
-        #rule 3: cards that follow uno rules(special)
+        #rule: cards that follow uno rules(special)
         elif card.action is not None:
             valid_cards.append(card)
-            
-        #rule 4: Crazy 8/wildcard
-        elif card.ranktype == "8":
+        
+        #rule: Makes sure the suit matches
+        elif card.suit == current_suit:
             valid_cards.append(card)
-    #Draw cards because no valid cards on hand
-    if not valid_cards:
-        return None
-    
-    #return card that will be valid
-    return valid_cards[0]
-
+            
+        #rule: The ranks of the cards match 
+        elif card.ranktype == played_card.ranktype:
+            valid_cards.append(card)
+            
+    return valid_cards[0] if valid_cards else None
+            
+        
+        
 #Brandon
 def apply_special_action(card, get_next_player, draw_cards, reverse_direction):
-    """Applies a special card action (skip, reverse, draw 2). Uses mock
+    """Applies a special card action (skip, reverse, draw 2 cards). Uses mock
     functions for the purpose of deliverable."""
     
     if card.action is None:
@@ -54,7 +52,7 @@ def apply_special_action(card, get_next_player, draw_cards, reverse_direction):
         reverse_direction()
         return "Direction reversed"
     
-    elif card.action == "DRAW 2":
+    elif card.action == "DRAW 2 cards":
         next_player = get_next_player()
         draw_cards(next_player, 2)
         return f"{next_player} draws 2 cards."
