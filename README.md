@@ -1,1 +1,9 @@
-# README file for The Eigth Wonders group project.
+README file for The Eigth Wonders group project.
+
+The Babylonian.py, collaborative_assignment_card_came_inst326.py (it is a misspelled version of the main file), and card_deck.py can be ignored. 
+These were to test our repo and to see we can operate within the Github repo correctly.
+The README files is for instructions on the game, how to run the program, and attributions within the code.
+The collaborative_assignment_card_game_inst326.py file is the code that runs the program and allows the user to play the game.
+
+To run the program, the user should go to the terminal and type in "python3 collaborative_assignment_card_game_inst326.py" from the spot in the directory the game file is saved within.
+This will start the program and the user can play the game.
