@@ -12,3 +12,5 @@ This will start the program, and the user can play the game. To start the progra
 | --- | --- | --- |
 | Player.play_card | Brandon Appleton | Comprehensions or generator expressions |
 | Game.apply_action_card | Brandon Appleton | f-string containing expressions |
+| Card.__repr__ | Steve Rozario | Magic methods |
+| Card.__init__ | Steve Rozario | Optional Parameters |
